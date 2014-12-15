@@ -1,5 +1,5 @@
 {
-    "name": "lisachenko/go-aop-php",
+    "name": "quickmobile/go-aop-php",
     "description": "Library for aspect-oriented programming in PHP.",
 
     "type": "library",
