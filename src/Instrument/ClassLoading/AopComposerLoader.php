@@ -28,15 +28,12 @@ class AopComposerLoader
     protected $original = null;
 
     /**
-     * List of internal dependencies that should not be analyzed by AOP
+     * List of dependencies that should be analyzed by AOP
      *
      * @var array
      */
-    protected $internalNamespaces = array(
-        'Go\\',
-        'Dissect\\',
-        'Doctrine\\Common\\',
-        'TokenReflection\\',
+    protected $aopNamespaces = array(
+        'deps\\traits\\',
     );
 
     /**
@@ -85,16 +82,16 @@ class AopComposerLoader
      */
     public function loadClass($class)
     {
-        if ($file = $this->original->findFile($class)) {
-            $isInternal = false;
-            foreach ($this->internalNamespaces as $ns) {
+        if ($file = $this->findFile($class)) {
+            $isAop = false;
+            foreach ($this->aopNamespaces as $ns) {
                 if (strpos($class, $ns) === 0) {
-                    $isInternal = true;
+                    $isAop = true;
                     break;
                 }
             }
 
-            include ($isInternal ? $file : FilterInjectorTransformer::rewrite($file));
+            include (!$isAop ? $file : FilterInjectorTransformer::rewrite($file));
         }
     }
 
