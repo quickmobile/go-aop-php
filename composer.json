@@ -4,7 +4,6 @@
 
     "type": "library",
     "keywords": ["library", "aop", "php", "aspect"],
-    "homepage": "http://go.aopphp.com/",
     "license": "MIT",
 
     "require": {
@@ -25,8 +24,8 @@
     "bin": ["bin/warmup"],
     "authors": [
         {
-            "name": "Lisachenko Alexander",
-            "homepage": "https://github.com/lisachenko"
+            "name": "Xavier Cousin",
+            "homepage": "https://github.com/xavier-cousin"
         }
     ],
 
