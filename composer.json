@@ -24,6 +24,10 @@
     "bin": ["bin/warmup"],
     "authors": [
         {
+            "name": "Lisachenko Alexander",
+            "homepage": "https://github.com/lisachenko"
+        },
+        {
             "name": "Xavier Cousin",
             "homepage": "https://github.com/xavier-cousin"
         }
